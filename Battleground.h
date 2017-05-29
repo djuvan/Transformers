@@ -18,11 +18,10 @@ public:
     ~Battleground();
     void add(const std::string& name, char team, int techSpecs[SPECCOUNT]);
     std::string battle();
-    std::string getWinner() const;
-    std::string getLoser() const;
-    void clear();
     int getBattleCount() const { return _battleCount; }
     std::string getSurvivers() const { return _survivers; }
+    std::string getWinner() const;
+    void clear();
 
 private:
     TransformerTeam _autobots;
@@ -34,6 +33,7 @@ private:
     std::string createWinnerList(TransformerTeam& winnerTeam) const;
     std::string createSurviverList(TransformerTeam& loserTeam, int lastIndex);
     std::string createBattleReport(int lastIndex);
+    std::string getLoser() const;
 };
 
 #endif //__battleground_h
