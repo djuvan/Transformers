@@ -21,16 +21,7 @@ class Transformer
 public:
     Transformer(std::string name, char team, int techSpecs[SPECCOUNT]);
     std::string getName() const { return _name; }
-    char getTeam() const { return _team; }
-    const int* getTechSpecs() const { return _techSpecs; }
-    int getStrength() const { return _techSpecs[0]; }
-    int getIntelligence() const { return _techSpecs[1]; }
-    int getSpeed() const { return _techSpecs[2]; }
-    int getEndurance() const { return _techSpecs[3]; }
     int getRank() const { return _techSpecs[4]; }
-    int getCourage() const { return _techSpecs[5]; }
-    int getFirepower() const { return _techSpecs[6]; }
-    int getSkill() const { return _techSpecs[7]; }
     int battle(const Transformer* opponent) const;
     char getBattleStatus() const { return _battleStatus; }
     void setBattleStatus(char status) { _battleStatus = status; }
@@ -45,6 +36,15 @@ private:
     int autoEliminationByName(const Transformer* opponent) const;
     int autoEliminationByCourageAndStrength(const Transformer* opponent) const;
     int autoEliminationBySkill(const Transformer* opponent) const;
+    int getStrength() const { return _techSpecs[0]; }
+    int getIntelligence() const { return _techSpecs[1]; }
+    int getSpeed() const { return _techSpecs[2]; }
+    int getEndurance() const { return _techSpecs[3]; }
+    int getCourage() const { return _techSpecs[5]; }
+    int getFirepower() const { return _techSpecs[6]; }
+    int getSkill() const { return _techSpecs[7]; }
+    char getTeam() const { return _team; }
+    const int* getTechSpecs() const { return _techSpecs; }
 };
 
 // Custom sort function
